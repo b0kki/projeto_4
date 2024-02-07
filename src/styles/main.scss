@@ -1,5 +1,18 @@
 @use 'variaveis';
 
+
+@mixin container() {
+    width: 1024px;
+    margin-top: 100px;
+}
+
+@mixin fontTitle () {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 * {
     margin: 0 auto;
     padding: 0;
@@ -9,14 +22,16 @@
 //colocar imagem no background com color overlay
 body {
     background-color: variaveis.$bgColor;
+    font-family: "Dosis", sans-serif;
+    font-style: normal;
 }
 
 //APLICAR BG-SHADOW
 .home {
     &__container {
-        width: 1024px;
-        margin-top: 100px;
+        @include container();
         background-color: variaveis.$bgSecondaryColor;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.74);
 
         &__logo {
             width: 100%;
@@ -53,6 +68,7 @@ body {
                     a {
                         text-decoration: NONE;
                         margin-left: 400px;
+
                         img {
                             width: 50px;
                         }
@@ -65,17 +81,125 @@ body {
                         margin-top: 70px;
                         margin-left: 300px;
                     }
-
                 }
             }
-
         }
     }
 }
 
 
+.synopsis {
+    width: 1124px;
+    margin-top: 100px;
+    text-align: center;
+    display: block;
+    margin-bottom: 100px;
+
+    &__container {
+        display: flex;
+
+        &__title {
+            position: absolute;
+            color: variaveis.$TextColor;
+            top: 128vh;
+
+            h1 {
+                @include fontTitle ();
+                font-size: 40px;
+                margin-left: 40px;
+            }
+
+            p {
+                text-align: left;
+                margin-left: 40px;
+            }
+        }
+
+        hr {
+            width: 1124px;
+            position: absolute;
+            margin-top: 14px;
+        }
+
+        &__content {
+            list-style: none;
+            display: flex;
+            position: absolute;
+            top: 140vh;
+            margin-left: 20px;
+            width: 1124px;
+
+            &__cover {
+                max-width: 150px;
+                margin-right: 20px;
+            }
+
+            &__text {
+                color: variaveis.$TextColor;
+                text-align: left;
+                max-width: 70vh;
+
+                p {
+                    font-size: 18px;
+                }
+
+                button {
+                    margin-top: 20px;
+                    color: variaveis.$TextColor;
+                    margin-right: 10px;
+                    background-color: transparent;
+                    border: solid 2px variaveis.$TextColor;
+                    padding: 12px 24px;
+                    border-radius: 50px;
+
+                }
+            }
+
+            &__tomatoes {
+                display: block;
+                margin-left: 20px;
+
+                img {
+                    max-width: 50px;
+                }
+
+                h2 {
+                    font-size: 28px;
+                    color: variaveis.$TextColor;
+                }
+
+                &__streaming {
+                    display: block;
+                    margin-top: 30px;
+
+                    p {
+                        font-size: 24px;
+                        color: variaveis.$TextColor;
+                    }
+
+                    img {
+                        max-width: 35px;
+                        margin: auto;
+                    }
+                }
+            }
+
+        }
+    }
 
 
+    &__color-blend {
+        box-shadow: 0 0 50px 65px variaveis.$bgColor;
+        padding: 20px 610px;
+        position: absolute;
+    }
+
+    //background-image
+    img {
+        width: 100%;
+    }
+
+}
 
 .gallery {
 
@@ -99,12 +223,13 @@ body {
             li {
                 max-width: 500px;
                 flex-wrap: wrap;
-                margin: 5px 5px;
+                margin: 10px;
             }
 
             img {
                 height: 270px;
                 width: 100%;
+                padding: 8px;
             }
         }
 
