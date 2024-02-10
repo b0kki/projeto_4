@@ -1,0 +1,235 @@
+@use 'variaveis';
+
+
+
+@mixin container() {
+    width: 1024px;
+}
+
+@mixin fontTitle () {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 410;
+    font-style: normal;
+}
+
+
+.info {
+    width: 1124px;
+    margin-top: 100px;
+    text-align: center;
+    display: block;
+    margin-bottom: 100px;
+
+    &__container {
+        display: flex;
+        position: relative;
+
+        &__tabs {
+            position: absolute;
+            margin-top: 28vh;
+            margin-left: 40px;
+
+            button {
+                margin-right: 35px;
+                color: variaveis.$TextColor;
+                border: none;
+                padding: 8px;
+                font-weight: bolder;
+                font-size: 14px;
+                border-radius: 10px;
+                background-color: variaveis.$bgColor;
+
+                &--is-active {
+                    background-color: rgb(156, 123, 123);
+                }
+
+                &:hover {
+                    color: red;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__title {
+            color: variaveis.$TextColor;
+            position: absolute;
+            margin-top: 18vh;
+
+            h1 {
+                @include fontTitle ();
+                font-size: 40px;
+                margin-left: 40px;
+            }
+
+            p {
+                text-align: left;
+                margin-left: 40px;
+            }
+
+        }
+
+        hr {
+            width: 1124px;
+            position: absolute;
+            margin-top: 14px;
+        }
+
+        &__content {
+            margin-left: 10px;
+            bottom: 8vh;
+            position: absolute;
+
+            &__box {
+                display: none;
+
+                &--is-active {
+                    display: flex;
+                }
+
+                &__text {
+                    display: block;
+                    color: variaveis.$TextColor;
+                    margin-top: 20px;
+                    text-align: left;
+                    width: 75vh;
+
+                    p {
+                        font-size: 18px;
+                    }
+
+                    button {
+                        margin-top: 20px;
+                        color: variaveis.$TextColor;
+                        font-weight: bold;
+                        font-size: 14px;
+                        margin-right: 10px;
+                        background-color: transparent;
+                        border: solid 2px variaveis.$TextColor;
+                        padding: 12px 24px;
+                        border-radius: 50px;
+
+                    }
+                }
+
+                &__dubladores {
+                    position: absolute;
+
+                    &__item {
+                        width: 90px;
+                        margin-right: 25px;
+                        margin-bottom: 50px;
+                        color: variaveis.$TextColor;
+                        list-style: none;
+                        margin-left: 30px;
+
+                        a {
+                            color: variaveis.$TextColor;
+                        }
+
+                        &__more {
+                            margin-top: 30px;
+                            margin-left: 20px;
+
+                            a {
+                                color: variaveis.$TextColor;
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 50px;
+                        border-radius: 4px;
+                    }
+                }
+
+                &__detalhes {
+                    display: flex;
+                    color: variaveis.$TextColor;
+                    list-style: none;
+                    margin-left: 10px;
+                    
+                    &__studio {
+                        display: block;
+                        width: 100%;
+                        align-items: center;
+                        margin-top: 30px;
+                        text-align: left;
+
+                        img {
+                            max-width: 150px;
+                            margin-bottom: 20px;
+                            margin-right: 50px;
+                        }
+                    }
+
+                    &__item {
+                        text-align: left;
+                        width: 200px;
+
+                        p{
+                            display: flex;
+                            margin-right: 10px;
+
+                            img {
+                                max-width: 35px;
+                            }
+                        }
+                        img {
+                            max-width: 80px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+
+                &__cover {
+                    max-width: 200px;
+                    padding: 20px;
+                    list-style: none;
+
+                }
+
+                &__tomatoes {
+                    display: block;
+                    margin-left: 20px;
+
+                    img {
+                        max-width: 50px;
+                    }
+
+                    h2 {
+                        font-size: 28px;
+                        color: variaveis.$TextColor;
+                    }
+
+                    &__streaming {
+                        display: block;
+                        margin-top: 30px;
+
+                        p {
+                            font-size: 24px;
+                            color: variaveis.$TextColor;
+                        }
+
+                        img {
+                            max-width: 35px;
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__color-blend {
+        box-shadow: 0 0 50px 65px variaveis.$bgColor;
+        padding: 20px 610px;
+        position: absolute;
+    }
+
+    //background-image
+    img {
+        width: 100%;
+    }
+
+}

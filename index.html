@@ -9,14 +9,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/main.css">
     <title>Mononoke Hime</title>
 </head>
 
 <body>
-    <section class="home">
+
+    <header>
+        <nav class="header__nav">
+            <div class="header__nav__container">
+                <img src="./src/images/logos/mask.png" alt="mask">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#synopsis">Sinopse</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
         <div class="home__container">
             <img class="home__container__logo" src="./src/images/logos/title.png" alt="Mononoke Hime">
             <ul class="home__container__list">
@@ -25,17 +41,21 @@
                 </li>
                 <div class="home__container__list__block">
                     <li class="home__container__list__block__text">
-                        <p>"A masterpiece showcasing Hayao Miyazaki at the very height of his
-                            abilities, it may represent the peak of traditional hand drawn animation
-                            immediately before computer animation began to replace them
-                            in the North American consciousness."</p>
+                        <p>"Some of the images in Princess Mononoke are not just unforgettable, they're almost edible in
+                            their vibrantly colored beauty. I haven't taken in animation quite so hungrily since I was a
+                            kid watching Disney features for the first time."</p>
+                        <p class="critic_review">— Joe Morgenstern, WALL STREET JOURNAL</p>
+                        <br>
+                        <p>"Beautifully constructed and painstakingly written, this is about as close to a perfect
+                            animated epic as you're likely to get."</p>
+                        <p class="critic_review">— Melanie McFarland, SEATTLE TIMES</p>
                         <a href="https://www.imdb.com/title/tt0119698/awards/?ref_=tt_awd">
                             <img src="./src/images/awards.png" title="14 premiações" alt="14 premiações">
                             <img src="./src/images/nominee.png" title="6 indicações" alt="6 indicações"></a>
                     </li>
                     <li class="home__container__list__block__trailer">
                         <a href="https://www.youtube.com/watch?v=4OiMOHRDs14"><img src="./src/images/trailer.png"
-                        title="Assista ao Trailer"    alt="Assista ao Trailer">
+                                title="Assista ao Trailer" alt="Assista ao Trailer">
                         </a>
                     </li>
                 </div>
@@ -43,52 +63,148 @@
         </div>
     </section>
 
-    <section class="synopsis">
-        <img src="./src/images/bg.png" alt="Sinopse do Filme">
-        <div class="synopsis__container">
-            <div class="synopsis__container__title">
+    <section id="info" class="info">
+        <div class="info__container">
+            <div class="info__container__title">
                 <h1>Princesa Mononoke</h1>
-                <p>1997 | 2h14min | +13</p>
+                <p>1997 | 2h14min | +14</p>
                 <hr>
             </div>
-            <ul class="synopsis__container__content">
-                <li class="synopsis__container__content__cover">
-                    <img src="./src/images/cover1.png" alt="movie cover">
-                </li>
-                <li class="synopsis__container__content__text">
-                    <strong>Diretor:</strong>
-                    <p>Hayao Miyazaki</p>
-                    <br />
-                    <p>No século XIV, a harmonia que os humanos, os animais e os deuses desfrutavam começa a desmoronar.
-                        O
-                        jovem Ashitaka, infectado por uma maldição, busca a cura do deus Shishigami, parecido com um
-                        cervo.
-                        Em suas viagens, ele vê humanos devastando a terra, provocando a ira do deus lobo Moro e de sua
-                        companheira humana, a princesa Mononoke. Suas tentativas de mediar a paz entre ela e os humanos
-                        só
-                        trazem conflito.</p>
-                    <button>Fantasia</button>
-                    <button>Drama</button>
-                    <button>Ação</button>
-                </li>
-                <li class="synopsis__container__content__tomatoes">
-                    <a href="https://www.rottentomatoes.com/m/princess_mononoke"><img
-                            src="./src/images/logos/tomatoes.png" title="Pontuação no rottentomatoes.com" alt="rotten tomatoes score">
-                    </a>
-                    <h2>93%</h2>
-                    <div class="synopsis__container__content__tomatoes__streaming">
-                        <p>Assista em:</p>
-                        <img src="./src/images/logos/apple-tv.png" alt="apple tv">
-                        <img src="./src/images/logos/netflix.png" alt="netflix">
-                        <img src="./src/images/logos/hbo.png" alt="hbo">
-                    </div>
-                </li>
+
+            <!-- SINOPSE -->
+            <img src="./src/images/bg.png" alt="Sinopse do Filme">
+            <ul class="info__container__tabs">
+                <nav>
+                    <button data-tab-button="sinopse"
+                        class="info__container__tabs__button info__container__tabs__button--is-active">
+                        Sinopse</button>
+                    <button data-tab-button="dubladores" class="info__container__tabs__button">
+                        Dubladores</button>
+                    <button data-tab-button="detalhes" class="info__container__tabs__button">
+                        Detalhes</button>
+                    <br>
+                </nav>
             </ul>
-            <div class="synopsis__color-blend"></div>
+
+
+            <div class="info__container__content">
+                <ul data-tab-id="sinopse"
+                    class="info__container__content__box info__container__content__box--is-active">
+                    <li class="info__container__content__box__cover">
+                        <img src="./src/images/cover1.png" alt="movie cover">
+                    </li>
+                    <li class="info__container__content__box__text">
+                        <strong>Diretor:</strong>
+                        <p>Hayao Miyazaki</p>
+                        <br />
+                        <p>No século XIV, a harmonia que os humanos, os animais e os deuses desfrutavam começa a
+                            desmoronar.
+                            O
+                            jovem Ashitaka, infectado por uma maldição, busca a cura do deus Shishigami, parecido com um
+                            cervo.
+                            Em suas viagens, ele vê humanos devastando a terra, provocando a ira do deus lobo Moro e de
+                            sua
+                            filha humana, a princesa Mononoke. Suas tentativas de mediar a paz entre ela e os humanos
+                            só
+                            trazem conflito.</p>
+                        <button>Fantasia</button>
+                        <button>Drama</button>
+                        <button>Ação</button>
+                    </li>
+                    <li class="info__container__content__box__tomatoes">
+                        <a href="https://www.rottentomatoes.com/m/princess_mononoke"><img
+                                src="./src/images/logos/tomatoes.png" title="Pontuação no rottentomatoes.com"
+                                alt="rotten tomatoes score">
+                        </a>
+                        <h2>93%</h2>
+                        <div class="info__container__content__box__tomatoes__streaming">
+                            <p>Assista em:</p>
+                            <img src="./src/images/logos/apple-tv.png" alt="apple tv">
+                            <img src="./src/images/logos/netflix.png" alt="netflix">
+                            <img src="./src/images/logos/hbo.png" alt="hbo">
+                        </div>
+                    </li>
+                </ul>
+
+                <ul data-tab-id="dubladores" class="info__container__content__box">
+                    <li class="info__container__content__box__dubladores__item">
+                        <img src="./src/images/dubladores/ashitaka.png" alt="Ashitaka">
+                        <strong>Ashitaka</strong>
+                        <br>
+                        <a href="https://dublagem.fandom.com/wiki/Peterson_Adriano">Peterson Adriano</a>
+                    </li>
+                    <li class="info__container__content__box__dubladores__item">
+                        <img src="./src/images/dubladores/san.webp" alt="San">
+                        <strong>San</strong>
+                        <br>
+                        <a href="https://dublagem.fandom.com/wiki/Fernanda_Crispim">Fernanda Crispim</a>
+                    </li>
+                    <li class="info__container__content__box__dubladores__item">
+                        <img src="./src/images/dubladores/lady_eboshi.webp" alt="Lady Eboshi">
+                        <strong>Lady Eboshi</strong>
+                        <br>
+                        <a href="https://dublagem.fandom.com/wiki/Vera_Miranda">Vera Miranda</a>
+                    </li>
+                    <li class="info__container__content__box__dubladores__item">
+                        <img src="./src/images/dubladores/jigo.webp" alt="Jigo">
+                        <strong>Jigo</strong>
+                        <br>
+                        <a href="https://dublagem.fandom.com/wiki/Mauro_Ramos">Mauro Ramos</a>
+                    </li>
+                    <li class="info__container__content__box__dubladores__item">
+                        <img src="./src/images/dubladores/moro.webp" alt="Moro">
+                        <strong>Moro</strong>
+                        <br>
+                        <a href="https://dublagem.fandom.com/wiki/Nelly_Amaral">Nelly Amaral</a>
+                    </li>
+                    <li class="info__container__content__box__dubladores__item">
+                        <img src="./src/images/dubladores/okkoto.webp" alt="Okkoto">
+                        <strong>Okkoto</strong>
+                        <br>
+                        <a href="https://dublagem.fandom.com/wiki/Pietro_Mário">Pietro Mário</a>
+                    </li>
+                    <li class="info__container__content__box__dubladores__item">
+                        <img src="./src/images/dubladores/kyio.webp" alt="Kyio">
+                        <strong>Kyio</strong>
+                        <br>
+                        <a href="https://dublagem.fandom.com/wiki/Lina_Rossana">Lina Rossana</a>
+                    </li>
+                    <li class="info__container__content__box__dubladores__item__more">
+                        <a href="https://dublagem.fandom.com/wiki/Princesa_Mononoke">Ver casting completo</a>
+                    </li>
+                </ul>
+
+                <ul data-tab-id="detalhes" class="info__container__content__box">
+                    <div class="info__container__content__box__detalhes">
+                        <li class="info__container__content__box__detalhes__studio">
+                            <img src="./src/images/datalhes/studio-ghibli.png" alt="Studio Ghibli">
+                            <div class="details-text">
+                                <p><strong>Lugar de dublagem:</strong> Rio de Janeiro</p>
+                                <br>
+                                <p><strong>Título original:</strong> もののけ姫 (Mononoke-hime)</p>
+                            </div>
+                        </li>
+                        <li class="info__container__content__box__detalhes__item">
+                            <h3>Estúdio de Dublagem:</h3>
+                            <img src="./src/images/datalhes/hebert-richards.png" alt="Versão BR Hebert Richards">
+                            <p><strong>Ano de emissão:</strong></p>
+                            <br>
+                            <div class="details-emission">
+                                <p>1977<img src="./src/images/datalhes/jp.png" alt="japan"></p>
+                                <p>2001<img src="./src/images/datalhes/br.jpg" alt="brasil"></p>
+                            </div>
+                        </li>
+                        <li class="info__container__content__box__detalhes__item">
+                            <img src="./src/images/datalhes/14.png" alt="Faxa Etaria">
+                        </li>
+                    </div>
+                </ul>
+            </div>
         </div>
+        <div class="info__color-blend"></div>
     </section>
 
-    <section class="gallery">
+    <section id="gallery" class="gallery">
         <div class="gallery__container">
             <h2>Galeria</h2>
             <ul class="gallery__container__list-images">
@@ -109,10 +225,104 @@
                 </li>
             </ul>
             <p>"Life is suffering. It is hard. The world is cursed.
-                Still, you fild reasons to keep living."</p>
+                Still, you'll find reasons to keep living."</p>
         </div>
     </section>
 
+    <section class="faq">
+        <h2>Curiosidades</h2>
+        <ul class="faq__questions">
+            <li class="faq__questions__item">
+                <div class="faq__questions__item__question" data-faq-question>
+                    Fato #1
+                </div>
+                <div class="faq__questions__item__answer">
+                    Apesar dos vários prêmios, Princesa Mononoke foi considerado um fracasso pelos produtores da
+                    Disney, apesar disso, o chefe da Pixar John Lasseter assumiu o lançamento seguinte do filme de
+                    Miyazaki nos EUA: A Viagem de Chihiro (2001), filme ganhador do Oscar®.
+                </div>
+            </li>
+            <li class="faq__questions__item">
+                <div class="faq__questions__item__question" data-faq-question>
+                    Fato #2
+                </div>
+                <div class="faq__questions__item__answer">
+                    O título original do filme em japonês é “Mononoke-hime”, que se traduz como “Princesa
+                    Espírito/Monstro”.
+                </div>
+            </li>
+            <li class="faq__questions__item">
+                <div class="faq__questions__item__question" data-faq-question>
+                    Fato #3
+                </div>
+                <div class="faq__questions__item__answer">
+                    O diretor de arte do filme, Kazuo Oga, passou dois anos criando as intrincadas pinturas de fundo que
+                    dão profundidade e realismo ao mundo do filme.
+                </div>
+            </li>
+            <li class="faq__questions__item faq__questions__item">
+                <div class="faq__questions__item__question" data-faq-question>
+                    Fato #4
+                </div>
+                <div class="faq__questions__item__answer">
+                    A estreia do filme no Japão contou com a presença de um número recorde de celebridades e
+                    dignitários, incluindo membros da família real.
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <ul class="lista">
+            <div class="lista__privacy">
+                <li>
+                    <a href="#">Política de Privacidade</a>
+                </li>
+                <li>
+                    <a href="#">Proteção de Dados</a>
+                </li>
+                <li>
+                    <a href="#">Anúncios Personalizados</a>
+                </li>
+                <li>
+                    <a href="#">Ajuda</a>
+                </li>
+            </div>
+            <li class="lista__contact">
+                <h3>Contato</h3>
+                <p>8807 W. Prince Lane </p>
+                <p>Plainfield, Saint Dennis NJ</p>
+                <p>07060 02</p>
+                <p>email2000@outlook.com</p>
+                <p>+55 11 96666 6666</p>
+            </li>
+            <div class="lista__links">
+                <li>
+                    <h3>Links</h3>
+                </li>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#info">Sinopse</a>
+                </li>
+                <li>
+                    <a href="#gallery">Galeria</a>
+                </li>
+                <li>
+                    <a href="#">Sobre</a>
+                </li>
+            </div>
+            <li class="lista__newsletter">
+                <h3>Newsletter</h3>
+                <input type="text" placeholder="Digite seu e-mail">
+                <button type="submit">Enviar</button>
+            </li>
+        </ul>
+    </footer>
+
+
+    <script src="./src/main.js"></script>
 </body>
 
 </html>

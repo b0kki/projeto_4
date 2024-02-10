@@ -1,0 +1,72 @@
+@use 'variaveis';
+
+@mixin container() {
+    width: 1024px;
+}
+
+.home {
+
+    &__container {
+        @include container();
+        background-color: variaveis.$bgSecondaryColor;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.74);
+
+        &__logo {
+            width: 100%;
+            margin-left: 100px;
+            padding: 50px 150px;
+        }
+
+        &__list {
+            list-style: none;
+            display: flex;
+
+            &__img {
+                width: 45%;
+                position: relative;
+                right: 80px;
+                top: 7vh;
+
+
+                img {
+                    width: 600px;
+                }
+            }
+
+            &__block {
+                display: block;
+
+                &__text {
+                    p {
+                        text-align: center;
+                        font-size: 18px;
+                        margin-right: 40px;
+                        color: variaveis.$TextColor;
+                    }
+
+                    .critic_review {
+                        text-align: right;
+                    }
+
+                    a {
+                        text-decoration: NONE;
+                        margin-left: 400px;
+
+                        img {
+                            width: 50px;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+
+                &__trailer {
+                    img {
+                        width: 240px;
+                        margin-top: 70px;
+                        margin-left: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
