@@ -20,6 +20,10 @@
     display: block;
     margin-bottom: 100px;
 
+    @media (max-width: 768px) {
+        width: 768px;
+    }
+
     &__container {
         display: flex;
         position: relative;
@@ -27,17 +31,22 @@
         &__tabs {
             position: absolute;
             margin-top: 28vh;
-            margin-left: 40px;
+            margin-left: 5vh;
+
+            @media (max-width: 768px) {
+                margin-top: 8.8vh;
+                margin-left: 40vh;
+            }
 
             button {
                 margin-right: 35px;
-                color: variaveis.$TextColor;
+                color: variaveis.$bgColor;
                 border: none;
                 padding: 8px;
                 font-weight: bolder;
                 font-size: 14px;
                 border-radius: 10px;
-                background-color: variaveis.$bgColor;
+                background-color: variaveis.$TextColor;
 
                 &--is-active {
                     background-color: rgb(156, 123, 123);
@@ -54,6 +63,10 @@
             color: variaveis.$TextColor;
             position: absolute;
             margin-top: 18vh;
+
+            @media (max-width: 768px) {
+                margin-top: 2vh;
+            }
 
             h1 {
                 @include fontTitle ();
@@ -72,6 +85,10 @@
             width: 1124px;
             position: absolute;
             margin-top: 14px;
+
+            @media (max-width: 768px) {
+                width: 768px;
+            }
         }
 
         &__content {
@@ -93,6 +110,10 @@
                     text-align: left;
                     width: 75vh;
 
+                    @media (max-width: 768px) {
+                        width: 50vh;
+                    }
+
                     p {
                         font-size: 18px;
                     }
@@ -108,11 +129,19 @@
                         padding: 12px 24px;
                         border-radius: 50px;
 
+                        @media (max-width: 768px) {
+                            padding: 6px 12px;
+                            margin-top: 10px;
+                        }
+
                     }
                 }
 
                 &__dubladores {
                     position: absolute;
+                    @media (max-width: 768px) {
+                        display: none;
+                    }
 
                     &__item {
                         width: 90px;
@@ -147,7 +176,7 @@
                     color: variaveis.$TextColor;
                     list-style: none;
                     margin-left: 10px;
-                    
+
                     &__studio {
                         display: block;
                         width: 100%;
@@ -166,7 +195,7 @@
                         text-align: left;
                         width: 200px;
 
-                        p{
+                        p {
                             display: flex;
                             margin-right: 10px;
 
@@ -174,6 +203,7 @@
                                 max-width: 35px;
                             }
                         }
+
                         img {
                             max-width: 80px;
                             margin-bottom: 20px;
@@ -191,6 +221,10 @@
                 &__tomatoes {
                     display: block;
                     margin-left: 20px;
+
+                    @media (max-width: 768px) {
+                        margin-top: 20px;
+                    }
 
                     img {
                         max-width: 50px;
@@ -225,11 +259,17 @@
         box-shadow: 0 0 50px 65px variaveis.$bgColor;
         padding: 20px 610px;
         position: absolute;
+
+        @media (max-width: 768px) {
+            box-shadow: 0 0 20px 35px variaveis.$bgColor;
+            padding: 20px 400px;
+        }
     }
 
     //background-image
     img {
         width: 100%;
+
     }
 
 }

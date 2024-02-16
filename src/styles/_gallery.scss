@@ -3,6 +3,31 @@
 
 .gallery {
 
+
+    @media (max-width: 768px) {
+        .gallery__container {
+            width: 768px;
+
+
+            //horizontal center last column
+            &__list-images {
+                grid-template-columns: 1fr 1fr;
+                gap: 5px;
+
+                img {
+                    height: 250px;
+                    width: 380px;
+                    border-radius: 4px;
+                    margin-bottom: 16px;
+                }
+            }
+
+            p {
+                width: 100%;
+            }
+        }
+    }
+
     &__container {
         width: 1424px;
         display: block;
@@ -12,12 +37,6 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: 20px;
             list-style: none;
-
-            
-
-            @media (max-width: 768px) {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
 
         }
 
